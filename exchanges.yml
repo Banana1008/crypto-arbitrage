@@ -1,0 +1,204 @@
+binance:
+  use: false
+  api_key: 
+  api_secret: 
+bitfinex: 
+  use: false
+  api_key: 
+  api_secret: 
+kraken: 
+  use: false
+  api_key: 
+  api_secret: 
+aax: 
+  use: false
+  api_key: 
+  api_secret: 
+alpaca: 
+  use: false
+  api_key: 
+  api_secret: 
+ascendex:
+  use: false
+  api_key: 
+  api_secret: 
+bequant:
+  use: true
+  api_key: 
+  api_secret: 
+bibox: 
+  use: false
+  api_key: 
+  api_secret: 
+bigone: 
+  use: false
+  api_key: 
+  api_secret: 
+bit2c: 
+  use: true
+  api_key: 
+  api_secret: 
+bitbank:
+  use: false
+  api_key: 
+  api_secret:  
+bitbns: 
+  use: false
+  api_key: 
+  api_secret: 
+bitfinex2: 
+  use: false
+  api_key: 
+  api_secret:  
+bitflyer: 
+  use: true
+  api_key: 
+  api_secret: 
+bitforex: 
+  use: false
+  api_key: 
+  api_secret: 
+bitget: 
+  use: true
+  api_key: 
+  api_secret: 
+bithumb: 
+  use: true
+  api_key: 
+  api_secret: 
+bitmart: 
+  use: false
+  api_key: 
+  api_secret: 
+bitopro: 
+  use: true
+  api_key: 
+  api_secret: 
+bitpanda: 
+  use: true
+  api_key: 
+  api_secret: 
+bitrue: 
+  use: false
+  api_key: 
+  api_secret: 
+bitso: 
+  use: false
+  api_key: 
+  api_secret: 
+bitstamp: 
+  use: true
+  api_key: 
+  api_secret:   
+bitstamp1: 
+  use: false
+  api_key: 
+  api_secret:  
+bittrex: 
+  use: false
+  api_key: 
+  api_secret: 
+bitvavo: 
+  use: false
+  api_key: 
+  api_secret: 
+bkex: 
+  use: false
+  api_key: 
+  api_secret:  
+bl3p:  
+  use: false
+  api_key: 
+  api_secret:  
+blockchaincom:  
+  use: false
+  api_key: 
+  api_secret:  
+btcalpha:  
+  use: false
+  api_key: 
+  api_secret:  
+btcbox:  
+  use: false
+  api_key: 
+  api_secret:  
+btcex:  
+  use: false
+  api_key: 
+  api_secret:  
+btcmarkets:  
+  use: false
+  api_key: 
+  api_secret:  
+btctradeua: 
+  use: false
+  api_key: 
+  api_secret:  
+btcturk:  
+  use: false
+  api_key: 
+  api_secret:  
+buda:  
+  use: false
+  api_key: 
+  api_secret:  
+bybit:  
+  use: false
+  api_key: 
+  api_secret:  
+bytetrade:  
+  use: false
+  api_key: 
+  api_secret:  
+cex:  
+  use: false
+  api_key: 
+  api_secret:  
+coinbase: 
+  use: true
+  api_key: 
+  api_secret: 
+coinbaseprime:  
+  use: false
+  api_key: 
+  api_secret:  
+coinbasepro:  
+  use: false
+  api_key: 
+  api_secret:  
+coincheck: 
+  use: false
+  api_key: 
+  api_secret: 
+zonda:
+  use: true
+  api_key: 
+  api_secret: 
+zb:
+  use: true
+  api_key: 
+  api_secret: 
+zaif:
+  use: true
+  api_key: 
+  api_secret: 
+yobit:
+  use: false
+  api_key: 
+  api_secret: 
+woo:
+  use: false
+  api_key: 
+  api_secret: 
+whitebit:
+  use: true
+  api_key: 
+  api_secret: 
+wazirx:
+  use: false
+  api_key: 
+  api_secret: 
+wavesexchange:
+  use: true
+  api_key: 
+  api_secret: 
