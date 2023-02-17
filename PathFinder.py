@@ -1,4 +1,3 @@
-import asyncio
 from collections import deque
 import time
 import networkx as nx 
@@ -53,6 +52,7 @@ class PathFinder:
         return retour
     
     def _proceed_exchange(self, graph, exchange, paires):
+        """s'occupe de l'exchange passé en paramètre"""
         tps1=time.time_ns()
         
         for market in exchange.symbols:
@@ -61,9 +61,10 @@ class PathFinder:
                 
         tps2=time.time_ns()
         
-        print((tps2-tps1)*10**(-9), " secondes pour ", exchange.name)
+        # print((tps2-tps1)*10**(-9), " secondes pour ", exchange.name)
     
     def _proceed_market(self, graph, exchange, paires, market):
+        """s'occupe du market de l'exchange passé en paramètre"""
         try:
             currency2, currency1 = market.split("/")
             if currency1 in self.currencies and currency2 in self.currencies:
@@ -71,21 +72,43 @@ class PathFinder:
                     ticker=exchange.fetch_ticker(market)
                 except Exception as e:
                     print(e)
-                        
-                ask=ticker["ask"]
-                bid=ticker["bid"]
+                    return
                     
+                ask=ticker["ask"]
+                bid=ticker["bid"]    
+                
                 if ask!=None and bid!=None:
                             
                     #les nodes sont ajoutées si elles y sont pas déjà
-                    graph.add_edge(currency1, currency2, name=exchange.name, weight=-math.log(bid), market=market)
-                    graph.add_edge(currency2, currency1, name=exchange.name, weight=math.log(ask), market=market) 
+                    graph.add_edge(currency1, currency2, name=exchange.name, weight=math.log(ask), market=market, type="buy")
+                    graph.add_edge(currency2, currency1, name=exchange.name, weight=-math.log(bid), market=market, type="sell") 
                         
         except ValueError as e:
             return
     
+    def _adjust_graph(self, graph):
+        for u,v,data in graph.edges(data=True):
+            if data["market"] == "SHIB/BTC":
+                #supprime l'edge SHIB/BTC
+                data["weight"]=Inf
+                
+    def init_digraph(self, exchange, paires):
+        with open('exchanges.yml') as config:
+            data = yaml.load_all(config, Loader=SafeLoader)
+            data=list(data)[0]
+        
+        self.new_graph=nx.DiGraph()
+        exc=ccxt.__getattribute__(exchange)()
+
+        exc.load_markets()
+        exc.apiKey=data[exchange]['api_key']
+        exc.secret=data[exchange]['api_secret']
+        self._proceed_exchange(self.new_graph, exc, paires)
+    
     def init_multi_graph(self, graph: nx.MultiDiGraph, exchanges: list[ccxt.Exchange], paires):
         """ market_prices: dict de markets (pour chaque exchange, en gros: liste de exchange.load_markets()"""
+        graph=nx.MultiDiGraph()
+        
         for exchange in exchanges:
             self._proceed_exchange(graph, exchange, paires)
             
@@ -96,15 +119,7 @@ class PathFinder:
         with ThreadPoolExecutor(len(exchanges)) as executor:
             executor.map(self._proceed_exchange, [graph for _ in range(len(exchanges))], exchanges, [paires for _ in range(len(exchanges))])
         
-        
-        
-        
-        
-        
-        
-        
-    
-    def init_digraph(self, multi_graph: nx.MultiDiGraph):
+    def init_digraph_from_multi(self, multi_graph: nx.MultiDiGraph):
         """transforme un multigraph en un digraph en prenant le poids le plus faible"""
         edges=multi_graph.edges
         
@@ -190,7 +205,7 @@ class PathFinder:
         v = self.bellman_ford(G, [source], weight, pred=self.pred, dist=self.distances)
 
         if v is None:
-            raise nx.NetworkXError("nonnnnononn")
+            return
 
         #il y a un cycle négatif ;)
         neg_cycle = []
