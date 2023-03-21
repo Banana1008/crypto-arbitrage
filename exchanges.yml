@@ -3,7 +3,7 @@ binance:
   api_key: 
   api_secret: 
 bitfinex: 
-  use: true
+  use: false
   api_key: 
   api_secret: 
 kraken: 
@@ -127,30 +127,7 @@ btcex:
   api_key: 
   api_secret:  
 btcmarkets:  
-  use: false
-  api_key: 
-  api_secret:  
-btctradeua: 
-  use: false
-  api_key: 
-  api_secret:  
-btcturk:  
-  use: false
-  api_key: 
-  api_secret:  
-buda:  
-  use: false
-  api_key: 
-  api_secret:  
-bybit:  
-  use: false
-  api_key: 
-  api_secret:  
-bytetrade:  
-  use: false
-  api_key: 
-  api_secret:  
-cex:  
+  use: falsetrue
   use: false
   api_key: 
   api_secret:  

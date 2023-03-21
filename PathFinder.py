@@ -51,7 +51,7 @@ class PathFinder:
                 retour.append(ex)
                 
         return retour
-    true
+    
     def _proceed_exchange(self, graph, exchange, paires):
         """s'occupe de l'exchange passé en paramètre"""
         tps1=time.time_ns()
