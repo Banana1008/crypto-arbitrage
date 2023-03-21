@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 from concurrent.futures import ThreadPoolExecutor
 
 class PathFinder:
+    """PathFinder is a class whose goal is to find the most profitable path in a MultiGraph for a negative weight cycle"""
     
     def __init__(self):
         self.currencies=list(self.init_currencies())
@@ -50,7 +51,7 @@ class PathFinder:
                 retour.append(ex)
                 
         return retour
-    
+    true
     def _proceed_exchange(self, graph, exchange, paires):
         """s'occupe de l'exchange passé en paramètre"""
         tps1=time.time_ns()
@@ -61,7 +62,7 @@ class PathFinder:
                 
         tps2=time.time_ns()
         
-        # print((tps2-tps1)*10**(-9), " secondes pour ", exchange.name)
+        print((tps2-tps1)*10**(-9), " secondes pour ", exchange.name)
     
     def _proceed_market(self, graph, exchange, paires, market):
         """s'occupe du market de l'exchange passé en paramètre"""

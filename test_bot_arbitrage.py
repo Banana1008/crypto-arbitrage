@@ -7,6 +7,7 @@ from yaml.loader import SafeLoader
 from PathFinder import PathFinder
 
 def main():
+    """Fonction main du programme, chargée de mettre en application PathFinder"""
     
     pf=PathFinder()
     

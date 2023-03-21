@@ -1,13 +1,13 @@
 binance:
-  use: false
+  use: true
   api_key: 
   api_secret: 
 bitfinex: 
-  use: false
+  use: true
   api_key: 
   api_secret: 
 kraken: 
-  use: false
+  use: true
   api_key: 
   api_secret: 
 aax: 
@@ -155,7 +155,7 @@ cex:
   api_key: 
   api_secret:  
 coinbase: 
-  use: true
+  use: false
   api_key: 
   api_secret: 
 coinbaseprime:  

@@ -1,1 +1,5 @@
 async: true
+arbitrage_rate: 1.0001
+multi:
+  exchange: true
+  which: btcalpha
