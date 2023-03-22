@@ -24,6 +24,8 @@ def main():
     
     while True:
         
+        print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+        
         if data["multi"]["exchange"]: 
         
             if data["async"]:
@@ -76,7 +78,7 @@ def main():
         tps2 = time.time_ns()
         # print("Calcul des cycles en ", (tps2 - tps1)*10**(-9), " secondes")
         
-        sleep(2)
+        sleep(10)
 
 if __name__ == "__main__":
     main()

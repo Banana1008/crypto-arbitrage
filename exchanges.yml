@@ -1,5 +1,5 @@
 binance:
-  use: true
+  use: false
   api_key: 
   api_secret: 
 bitfinex: 
@@ -7,7 +7,7 @@ bitfinex:
   api_key: 
   api_secret: 
 kraken: 
-  use: true
+  use: false
   api_key: 
   api_secret: 
 aax: 
@@ -59,7 +59,7 @@ bitforex:
   api_key: 
   api_secret: 
 bitget: 
-  use: true
+  use: false
   api_key: 
   api_secret: 
 bithumb: 
@@ -148,11 +148,11 @@ coincheck:
   api_key: 
   api_secret: 
 zonda:
-  use: true
+  use: false
   api_key: 
   api_secret: 
 zb:
-  use: true
+  use: false
   api_key: 
   api_secret: 
 zaif:
@@ -168,7 +168,7 @@ woo:
   api_key: 
   api_secret: 
 whitebit:
-  use: true
+  use: false
   api_key: 
   api_secret: 
 wazirx:
@@ -176,6 +176,6 @@ wazirx:
   api_key: 
   api_secret: 
 wavesexchange:
-  use: true
+  use: false
   api_key: 
   api_secret: 
